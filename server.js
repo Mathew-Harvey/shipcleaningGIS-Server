@@ -62,7 +62,7 @@ class APIExplorer {
   }
 }
 
-// Publicly available endpoints (excluding shipChannels due to errors)
+// Publicly available endpoints (unchanged)
 const ENDPOINTS = {
   portAuthorities: "https://public-services.slip.wa.gov.au/public/rest/services/SLIP_Public_Services/Boundaries/MapServer/12/query?where=1%3D1&outFields=*&returnGeometry=true&f=geojson",
   marineParks: "https://services.slip.wa.gov.au/public/rest/services/Landgate_Public_Maps/Marine_Map_WA_3/MapServer/2/query?where=1%3D1&outFields=*&returnGeometry=true&f=geojson",
@@ -72,7 +72,7 @@ const ENDPOINTS = {
   marineInfrastructure: "https://services.slip.wa.gov.au/public/rest/services/Landgate_Public_Maps/Marine_Map_WA_3/MapServer/18/query?where=1%3D1&outFields=*&returnGeometry=true&f=geojson"
 };
 
-// Create API endpoints for each documented service
+// Create API endpoints for each service
 Object.entries(ENDPOINTS).forEach(([key, url]) => {
   app.get(`/api/${key}`, async (req, res) => {
     try {
